@@ -1,0 +1,307 @@
+@use "../vars.scss" as *;
+
+.overview {
+
+  .sidebar {
+    width: 300px;
+    background-color: $secondry;
+    padding: 20px 0 60px;
+    color: $light-grey;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    img {
+      max-width: 218px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .items {
+      margin-bottom: 57px;
+
+      a {
+        padding: 8px 40px;
+        width: 90%;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        position: relative;
+        
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 2px;
+          background-color: $primary;
+          opacity: 0;
+          @include tra(.2s);
+        }
+
+        &:hover , &.active {
+          background-color: #f2931f25;
+          svg {
+            color: $primary;
+          }
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    button {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 16px 0;
+      @include rad(10px);
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: -0.408px;
+      text-transform: capitalize;
+      color: #FFFFFF;
+      background-color: $primary;
+      font-weight: 500;
+      margin-bottom: 400px;
+
+      i {
+        font-size: 20px;
+      }
+
+      border: none;
+      
+      &:hover {
+        
+        letter-spacing: 0.5px;
+        
+        transform: scale(1.02) translateY(-2px);
+        -webkit-transform: scale(1.02) translateY(-2px);
+        -moz-transform: scale(1.02) translateY(-2px);
+        -ms-transform: scale(1.02) translateY(-2px);
+        -o-transform: scale(1.02) translateY(-2px);
+      }
+    }
+
+    .logout {
+      line-height: 22px;
+      letter-spacing: -0.408px;
+      text-transform: capitalize;
+      color: $icons;
+      padding-left: 40px;
+
+      &:hover {
+        color: $primary;
+        svg {color: $primary;} 
+      }
+
+      svg {
+        font-size: 18px;
+        color: $icons;
+      }
+    }
+  }
+
+  .page {
+    width: calc(100vw - 280px);
+    background-color: $light-grey;
+
+    .navbar {
+      width: 100%;
+      padding: 24px 40px 24px 150px;
+      background-color: white;
+      position: sticky;
+      top: 0;
+      right: 0;
+      z-index: 100;
+
+      .search {
+        position: relative;
+
+        input {
+          width: 570px;
+          padding: 11px 10px 11px 33px;
+          border: 1px solid rgba(246, 245, 248, 0.5);
+          @include rad(10px);
+          background-color: $light-grey;
+          line-height: 22px;
+          letter-spacing: -0.408px;
+          text-transform: capitalize;
+          color: $primary-f;
+          outline: none;
+          &::placeholder {
+            line-height: 22px;
+            letter-spacing: -0.408px;
+            text-transform: capitalize;
+            color: $secondry-f;
+          }
+        }
+        
+        i {
+          position: absolute;
+          left: 12px;
+          top: 50%;
+          @include center((0 , -50%));
+          color: $secondry-f;
+
+        }
+      }
+
+      .lang-profile {
+        > a svg {
+          color: $secondry;
+        }
+        .profile {
+          .circle {
+            padding: 17px;
+            @include rad(50%);
+            background-color: $primary;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: -0.408px;
+            text-transform: capitalize;
+            color: $secondry;
+          }
+          .data {
+            h3 {
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 22px;
+              letter-spacing: -0.408px;
+              text-transform: capitalize;
+              color: $primary-f;
+              margin-bottom: 0;
+            }
+
+            h4 {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 22px;
+              letter-spacing: -0.408px;
+              text-transform: capitalize;
+              color: #8F8F8F;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .graphs {
+      margin-bottom: 40px;
+
+      .numbersChart {
+        flex: 1;
+      }
+
+      .numbersChart , .pieChart {
+        position: relative;
+        @include rad(20px);
+        h2 {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 22px;
+          text-transform: capitalize;
+          color: $secondry;
+        }
+      }
+    }
+
+    .latest {
+      width: 100%;
+      margin-bottom: 1000px;
+
+      h2 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: capitalize;
+        color: $secondry;
+      }
+
+      .scroll {
+        max-height: 258.67px;
+        overflow-y: scroll;
+      }
+
+      .scroll::-webkit-scrollbar-thumb {
+        background-color: $secondry;
+        @include rad(5px);
+      }
+
+      thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        // color: $light-grey;
+      }
+
+      .companies {
+        table {
+          line-height: 22px;
+          letter-spacing: -0.408px;
+          text-transform: capitalize;
+          color: #5D5D5D;
+          text-align: center;
+          width: 500px;
+
+          thead {
+            border-bottom: 1px solid #F4F5F6;
+            font-weight: 500;
+            th {padding: 24px 16px 24px;}
+          }
+
+          tbody {
+            td {padding: 20px 0;}
+            &:not(:last-of-type) {
+              border-bottom: 1px solid #F4F4F4;
+            }
+          }
+        }
+      }
+
+      .clients {
+        flex: 1;
+
+        table {
+          line-height: 22px;
+          letter-spacing: -0.408px;
+          text-transform: capitalize;
+          color: #5D5D5D;
+          text-align: center;
+          width:100%;
+
+          thead {
+            border-bottom: 1px solid #F4F5F6;
+            font-weight: 500;
+            th {padding: 24px 16px 24px;}
+          }
+
+          tbody {
+            td {padding: 20px 0;}
+            &:not(:last-of-type) {
+              border-bottom: 1px solid #F4F4F4;
+            }
+          }
+        }
+      }
+    }
+
+    .rights {
+      line-height: 19px;
+      color: $secondry-f;
+      text-align: center;
+      
+      span {
+        color: $secondry;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use "../vars.scss" as *;
+
+.clients {
+  .page {
+    .latest {
+      .scroll {
+        max-height: calc(100vh - 300.78px);
+      }
+      .clients { 
+        .head {
+          h4 {
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: -0.408px;
+            text-transform: capitalize;
+            color: $secondry-f;
+          }
+
+          select {
+            line-height: 22px;
+            letter-spacing: -0.408px;
+            font-size: 16px;
+            text-transform: capitalize;
+            color: $primary-f;
+            width: 217px;
+            outline: none;
+            background-color: white;
+            border: 1px solid $light-grey;
+            @include rad(10px);
+          }
+
+          a {
+            display: block;
+            padding: 16px 32px;
+            background-color: $secondry;
+            color: white;
+            @include rad(10px);
+
+            &:hover {
+              background-color: $primary;
+            }
+          }
+        }
+
+        tbody {
+
+          td:hover {
+            color: $primary;
+          }
+          
+          td:last-of-type {
+            font-weight: 900;
+            font-size: 20px;
+            cursor: pointer;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
