@@ -134,7 +134,7 @@
               </select>
             </div>
             <div class="addClient">
-              <a href="/" class="d-flex align-items-center gap-2">
+              <a href="{{route('createClient')}}" class="d-flex align-items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                   <path d="M6 0H4V4H0V6H4V10H6V6H10V4H6V0Z" fill="currentColor" />
                 </svg>
@@ -158,9 +158,11 @@
                 <th>Status</th>
                 <th>Action</th>
               </thead>
-              <tbody>
+              
+                @foreach ($Clients as $Client)
+                <tbody>
                 <td>24-feb</td>
-                <td>Ali mohamed</td>
+                <td>{{$Client->fName}} {{$Client->lName}}</td>
                 <td>Egypt</td>
                 <td>E890948578</td>
                 <td>90948578</td>
@@ -172,20 +174,9 @@
                 <td>Inside</td>
                 <td>...</td>
               </tbody>
-              <tbody>
-                <td>24-feb</td>
-                <td>Ali mohamed</td>
-                <td>Egypt</td>
-                <td>E890948578</td>
-                <td>90948578</td>
-                <td>24-feb-23</td>
-                <td>A-9</td>
-                <td>24-feb-23</td>
-                <td>24-feb-23</td>
-                <td>ADF</td>
-                <td>Inside</td>
-                <td>...</td>
-              </tbody>
+                @endforeach
+                
+              
             </table>
           </div>
         </div>

@@ -28,6 +28,73 @@ li {
   list-style: none;
 }
 
+input::-webkit-input-placeholder {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+input::-moz-placeholder {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+input:-ms-input-placeholder {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+input::-ms-input-placeholder {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+input::placeholder {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+input:focus::-moz-placeholder {
+  opacity: 0;
+}
+input:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+input:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* Start Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
@@ -609,4 +676,136 @@ body.login {
 }
 .client-details .second a:hover {
   background-color: #F2921F;
+}
+
+.add-client > h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  text-transform: capitalize;
+  color: #2D3245;
+}
+.add-client .data label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #5D5D5D;
+}
+.add-client .data .head h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  text-transform: capitalize;
+  color: #2D3245;
+}
+.add-client .data .clear {
+  color: #8F8F8F;
+  cursor: pointer;
+}
+.add-client .data .clear:hover {
+  color: red;
+}
+.add-client .data .clear input[type=reset] {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  text-transform: capitalize;
+  background-color: transparent;
+  border: none;
+}
+.add-client .group1 {
+  margin-bottom: 65px;
+}
+.add-client .top {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.add-client .bottom .buttons a, .add-client .bottom .buttons button {
+  padding: 15px 50px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.add-client .bottom .buttons button {
+  background-color: #2D3245;
+  color: white;
+  border: 1px solid #2D3245;
+}
+.add-client .bottom .buttons button:hover {
+  color: #8F8F8F;
+  background-color: white;
+}
+.add-client .bottom .buttons a {
+  color: #8F8F8F;
+  border: 1px solid #8F8F8F;
+}
+.add-client .bottom .buttons a:hover {
+  background-color: red;
+  color: white;
+}
+.add-client input, .add-client select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: 1px solid #BFBFBF;
+  background: rgba(246, 245, 248, 0.5);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.add-client input::-webkit-input-placeholder, .add-client select::-webkit-input-placeholder {
+  color: #686868;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+.add-client input::-moz-placeholder, .add-client select::-moz-placeholder {
+  color: #686868;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+.add-client input:-ms-input-placeholder, .add-client select:-ms-input-placeholder {
+  color: #686868;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+.add-client input::-ms-input-placeholder, .add-client select::-ms-input-placeholder {
+  color: #686868;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+.add-client input::placeholder, .add-client select::placeholder {
+  color: #686868;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+.add-client input:focus, .add-client select:focus {
+  border: 1px solid #F2921F;
+  outline: none;
+}
+.add-client select {
+  color: #686868;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+.add-client .input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }

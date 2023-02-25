@@ -20,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::any('/Create/Client', [App\Http\Controllers\ClientController::class, 'createClient'])->name('createClient');
+
+Route::get('/Client', [App\Http\Controllers\ClientController::class, 'getClient'])->name('getClient');
