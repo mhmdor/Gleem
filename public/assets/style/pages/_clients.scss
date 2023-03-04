@@ -35,6 +35,7 @@
             background-color: $secondry;
             color: white;
             @include rad(10px);
+            text-transform: capitalize;
 
             &:hover {
               background-color: $primary;
@@ -43,6 +44,22 @@
         }
 
         tbody {
+
+          td {
+            padding: 20px 0;
+            &:hover {
+              color: $primary;
+            }
+            span {
+              color: white;
+              display: block;
+              max-width: 80px;
+              margin: auto;
+              &.pending {background-color: #F2921F;}
+              &.rejected {background-color: #FE4C13;}
+              &.complete {background-color: #58E0AB;}
+            }
+          }
 
           td:hover {
             color: $primary;

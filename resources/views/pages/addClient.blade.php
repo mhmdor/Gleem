@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <!-- FavIcon -->
     <link rel="icon" type="image/x-icon" href="../assets/icons/fav-icon.png">
     <!-- Bootstap -->
@@ -23,9 +24,9 @@
     <div class="overview clients d-flex">
 
         <div class="sidebar d-flex flex-column">
-            <img src="../assets/icons/logo.png" alt="" class="mb-5">
+            <img src="{{ asset('assets/icons/logo.png') }}" alt="" class="mb-5">
             <div class="items d-flex flex-column gap-2">
-                <a href="/" class="d-flex align-items-center gap-3 py-2">
+                <a href="/" class="d-flex align-items-center gap-3 py-2 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                         fill="none">
                         <path
@@ -43,7 +44,7 @@
                     </svg>
                     <span>Overview</span>
                 </a>
-                <a href="/" class="d-flex align-items-center gap-3 py-2">
+                <a href="{{ route('getClient') }}" class="d-flex align-items-center gap-3 py-2 active">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14"
                         fill="none">
                         <path
@@ -61,7 +62,7 @@
                     </svg>
                     <span>individual clients</span>
                 </a>
-                <a href="/" class="d-flex align-items-center gap-3 py-2">
+                <a href="{{ route('getCompany') }}" class="d-flex align-items-center gap-3 py-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                         fill="none">
                         <path
@@ -79,14 +80,37 @@
                     </svg>
                     <span>Companies</span>
                 </a>
+                <a href="/" class="d-flex align-items-center gap-3 py-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                        fill="none">
+                        <path
+                            d="M2 2H18V14H3.17L2 15.17V2ZM2 0C0.9 0 0.00999999 0.9 0.00999999 2L0 20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0H2ZM4 10H12V12H4V10ZM4 7H16V9H4V7ZM4 4H16V6H4V4Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span>Messages</span>
+                </a>
+                <a href="/" class="d-flex align-items-center gap-3 py-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                        fill="none">
+                        <path
+                            d="M17.6964 11.0752C17.7364 10.7552 17.7664 10.4352 17.7664 10.0952C17.7664 9.75521 17.7364 9.43522 17.6964 9.11522L19.8064 7.46521C19.9964 7.31521 20.0464 7.04521 19.9264 6.82521L17.9264 3.36521C17.8364 3.20521 17.6664 3.11521 17.4864 3.11521C17.4264 3.11521 17.3664 3.12522 17.3164 3.14522L14.8264 4.14522C14.3064 3.74522 13.7464 3.41522 13.1364 3.16522L12.7564 0.515215C12.7264 0.275215 12.5164 0.0952148 12.2664 0.0952148H8.26644C8.01644 0.0952148 7.80644 0.275215 7.77644 0.515215L7.39644 3.16522C6.78644 3.41522 6.22644 3.75522 5.70644 4.14522L3.21644 3.14522C3.15644 3.12522 3.09644 3.11521 3.03644 3.11521C2.86644 3.11521 2.69644 3.20521 2.60644 3.36521L0.606441 6.82521C0.476441 7.04521 0.536441 7.31521 0.726441 7.46521L2.83644 9.11522C2.79644 9.43522 2.76644 9.76521 2.76644 10.0952C2.76644 10.4252 2.79644 10.7552 2.83644 11.0752L0.726441 12.7252C0.536441 12.8752 0.486441 13.1452 0.606441 13.3652L2.60644 16.8252C2.69644 16.9852 2.86644 17.0752 3.04644 17.0752C3.10644 17.0752 3.16644 17.0652 3.21644 17.0452L5.70644 16.0452C6.22644 16.4452 6.78644 16.7752 7.39644 17.0252L7.77644 19.6752C7.80644 19.9152 8.01644 20.0952 8.26644 20.0952H12.2664C12.5164 20.0952 12.7264 19.9152 12.7564 19.6752L13.1364 17.0252C13.7464 16.7752 14.3064 16.4352 14.8264 16.0452L17.3164 17.0452C17.3764 17.0652 17.4364 17.0752 17.4964 17.0752C17.6664 17.0752 17.8364 16.9852 17.9264 16.8252L19.9264 13.3652C20.0464 13.1452 19.9964 12.8752 19.8064 12.7252L17.6964 11.0752ZM15.7164 9.36522C15.7564 9.67522 15.7664 9.88521 15.7664 10.0952C15.7664 10.3052 15.7464 10.5252 15.7164 10.8252L15.5764 11.9552L16.4664 12.6552L17.5464 13.4952L16.8464 14.7052L15.5764 14.1952L14.5364 13.7752L13.6364 14.4552C13.2064 14.7752 12.7964 15.0152 12.3864 15.1852L11.3264 15.6152L11.1664 16.7452L10.9664 18.0952H9.56644L9.37644 16.7452L9.21644 15.6152L8.15644 15.1852C7.72644 15.0052 7.32644 14.7752 6.92644 14.4752L6.01644 13.7752L4.95644 14.2052L3.68644 14.7152L2.98644 13.5052L4.06644 12.6652L4.95644 11.9652L4.81644 10.8352C4.78644 10.5252 4.76644 10.2952 4.76644 10.0952C4.76644 9.89521 4.78644 9.66522 4.81644 9.36522L4.95644 8.23522L4.06644 7.53521L2.98644 6.69522L3.68644 5.48521L4.95644 5.99521L5.99644 6.41521L6.89644 5.73521C7.32644 5.41521 7.73644 5.17521 8.14644 5.00521L9.20644 4.57521L9.36644 3.44521L9.56644 2.09521H10.9564L11.1464 3.44521L11.3064 4.57521L12.3664 5.00521C12.7964 5.18521 13.1964 5.41521 13.5964 5.71521L14.5064 6.41521L15.5664 5.98521L16.8364 5.47521L17.5364 6.68521L16.4664 7.53521L15.5764 8.23522L15.7164 9.36522ZM10.2664 6.09521C8.05644 6.09521 6.26644 7.88521 6.26644 10.0952C6.26644 12.3052 8.05644 14.0952 10.2664 14.0952C12.4764 14.0952 14.2664 12.3052 14.2664 10.0952C14.2664 7.88521 12.4764 6.09521 10.2664 6.09521ZM10.2664 12.0952C9.16644 12.0952 8.26644 11.1952 8.26644 10.0952C8.26644 8.99521 9.16644 8.09521 10.2664 8.09521C11.3664 8.09521 12.2664 8.99521 12.2664 10.0952C12.2664 11.1952 11.3664 12.0952 10.2664 12.0952Z"
+                            fill="#F6F5F8" />
+                    </svg>
+                    <span>Settings</span>
+                </a>
             </div>
-            <button class="d-flex align-items-center gap-2 justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"
-                    fill="none">
-                    <path d="M6 0H4V4H0V6H4V10H6V6H10V4H6V0Z" fill="currentColor" />
-                </svg>
-                <span>Add new employee</span>
-            </button>
+            @if (Auth::user()->role == 1)
+                <a href="{{ route('createEmployee') }}">
+                    <button class="d-flex align-items-center gap-2 justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"
+                            fill="none">
+                            <path d="M6 0H4V4H0V6H4V10H6V6H10V4H6V0Z" fill="currentColor" />
+                        </svg>
+                        <span>Add new employee</span>
+                    </button>
+                </a>
+            @endif
+
             <div class="logout d-flex align-items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
                     fill="none">
@@ -94,9 +118,20 @@
                         d="M14 5L12.59 6.41L14.17 8H6V10H14.17L12.59 11.58L14 13L18 9L14 5ZM2 2H9V0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H9V16H2V2Z"
                         fill="currentColor" />
                 </svg>
-                <a href="/">logout</a>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+      document.getElementById('logout-form').submit();">
+                    logout
+                </a>
+
+
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
+
 
         <div class="page">
 
@@ -121,7 +156,7 @@
                             <div class="circle">AM</div>
                         </a>
                         <div class="data d-flex flex-column">
-                            <h3>Ali Mohamed</h3>
+                            <h3>{{ Auth::user()->name }}</h3>
                             <h4>Admin</h4>
                         </div>
                     </div>
@@ -141,7 +176,7 @@
                 </h2>
 
                 <form method="POST" action="{{ route('createClient') }}" class="data">
-                  @csrf
+                    @csrf
 
                     <div class="top bg-white p-4 mb-5">
 
@@ -151,34 +186,31 @@
 
                         <div action="" class="group1">
 
-                            <label class="mb-2">Customer name</label>
+
 
                             <div class="line d-flex justify-content-between gap-3 mb-4">
-                                <input name="fName" type="text" class="p-3 @error('fName') is-invalid @enderror"
-                                    placeholder="First Name">
-                                @error('fName')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                <input name="sName" type="text" class="p-3 @error('sName') is-invalid @enderror"
-                                    placeholder="Second Name">
-                                @error('sName')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                <input name="lName" type="text" class="p-3 @error('lName') is-invalid @enderror"
-                                    placeholder="Last Name">
-                                @error('lName')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <div class="input d-flex flex-column gap-2">
+                                    <label>First Name</label>
+                                    <input name="fName" type="text"
+                                        class="p-3 @error('fName') is-invalid @enderror" placeholder="First Name">
+                                    @error('fName')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
 
-                            </div>
+                                <div class="input d-flex flex-column gap-2">
+                                    <label>Last Name</label>
+                                    <input name="lName" type="text"
+                                        class="p-3 @error('lName') is-invalid @enderror" placeholder="Last Name">
+                                    @error('lName')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
 
-                            <div class="line d-flex justify-content-between gap-3 mb-4">
                                 <div class="input d-flex flex-column gap-2">
                                     <label>Gender</label>
                                     <select name="gender" id=""
@@ -193,6 +225,11 @@
                                         </span>
                                     @enderror
                                 </div>
+
+                            </div>
+
+                            <div class="line d-flex justify-content-between gap-3 mb-4">
+
                                 <div class="input d-flex flex-column gap-2">
                                     <label>date of birth</label>
                                     <input type="date" name="dBirth" id=""
@@ -203,25 +240,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="input d-flex flex-column gap-2">
-                                    <label>estimated age</label>
-                                    <div class="two d-flex gap-2">
-                                        <input name="EsYear" type="number" placeholder="Year"
-                                            class="p-3 w-25 @error('EsYear') is-invalid @enderror">
-                                        @error('EsYear')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                        <input name="EsMonth" type="number" placeholder="Month"
-                                            class="p-3 w-25 @error('EsMonth') is-invalid @enderror">
-                                        @error('EsMonth')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
+
                                 <div class="input d-flex flex-column gap-2">
                                     <label>religion</label>
                                     <select name="religion" id=""
@@ -236,39 +255,16 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-
-                            <div class="line d-flex justify-content-between gap-3">
-                                <div class="two d-flex gap-3 w-50">
-                                    <div class="input d-flex flex-column gap-2 w-50">
-                                        <label>Nationality</label>
-                                        <select name="nationality_id" id=""
-                                            class="p-3 @error('nationality_id') is-invalid @enderror">
-                                            <option value="" disabled selected>Choose</option>
-                                            <option value="1">Egypt</option>
-                                            <option value="2">Saudi Arabia</option>
-                                        </select>
-                                        @error('nationality_id')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="input d-flex flex-column gap-2 w-50">
-                                        <label>ID</label>
-                                        <select name="" id="" class="p-3 ">
-                                            <option value="" disabled selected>ex. national ID, Passport,etc
-                                            </option>
-                                            <option value="nationalID">national ID</option>
-                                            <option value="passport">Passport</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="input d-flex flex-column gap-2">
-                                    <label>ID number</label>
-                                    <input name="idNumber" type="number" placeholder="Add ID number"
-                                        class="p-3 @error('idNumber') is-invalid @enderror">
-                                    @error('idNumber')
+                                <div class="input d-flex flex-column gap-2 w-50">
+                                    <label>Nationality</label>
+                                    <select name="nationality_id" id=""
+                                        class="p-3 @error('nationality_id') is-invalid @enderror">
+                                        <option value="" disabled selected>Choose</option>
+                                        @foreach ($Countries as $country)
+                                            <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('nationality_id')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -276,21 +272,24 @@
                                 </div>
                             </div>
 
+
+
                         </div>
 
                         <div class="head mb-4 d-flex align-items-center justify-content-between">
                             <h2>address and contact information</h2>
                         </div>
 
-                        <div action="" class="group2 mb-4 w-75">
+                        <div action="" class="group2 mb-4 ">
                             <div class="line d-flex justify-content-between gap-3 mb-4">
                                 <div class="input d-flex flex-column gap-2">
                                     <label>country</label>
                                     <select name="country_id" id=""
                                         class="p-3 @error('country_id') is-invalid @enderror">
                                         <option value="" disabled selected>Choose</option>
-                                        <option value="1">egypt</option>
-                                        <option value="2">saudi arabia</option>
+                                        @foreach ($Countries as $country)
+                                            <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                        @endforeach
                                     </select>
                                     @error('country_id')
                                         <span class="invalid-feedback" role="alert">
@@ -303,8 +302,9 @@
                                     <select name="city_id" id=""
                                         class="p-3 @error('city_id') is-invalid @enderror">
                                         <option value="" disabled selected>Choose</option>
-                                        <option value="1">Cairo</option>
-                                        <option value="2">Dubai</option>
+                                        @foreach ($Citiez as $city)
+                                            <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                        @endforeach
                                     </select>
                                     @error('city_id')
                                         <span class="invalid-feedback" role="alert">
@@ -328,7 +328,7 @@
                                 </div>
                             </div>
                             <div class="line d-flex justify-content-between gap-3 mb-4">
-                                <div class="input d-flex flex-column gap-2">
+                                <div class="input d-flex flex-column gap-2  w-75">
                                     <label>address line</label>
                                     <input name="address" type="text"
                                         class="p-3 @error('address') is-invalid @enderror" placeholder="Add address">
@@ -338,11 +338,9 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-                            <div class="line d-flex justify-content-between gap-3 mb-4">
-                                <div class="input d-flex flex-column gap-2">
+                                <div class="input d-flex flex-column gap-2 mobileInput">
                                     <label>Mobile</label>
-                                    <input name="mobile" type="number"
+                                    <input name="mobile" type="number" placeholder="Mobile"
                                         class="p-3 @error('mobile') is-invalid @enderror">
                                     @error('mobile')
                                         <span class="invalid-feedback" role="alert">
@@ -350,9 +348,12 @@
                                         </span>
                                     @enderror
                                 </div>
+                            </div>
+                            <div class="line d-flex justify-content-between gap-3 mb-4">
+                                
                                 <div class="input d-flex flex-column gap-2">
                                     <label>Home phone</label>
-                                    <input name="hPhone" type="number"
+                                    <input name="hPhone" type="number" placeholder="Home Phone"
                                         class="p-3 @error('hPhone') is-invalid @enderror">
                                     @error('hPhone')
                                         <span class="invalid-feedback" role="alert">
@@ -362,7 +363,7 @@
                                 </div>
                                 <div class="input d-flex flex-column gap-2">
                                     <label>work phone</label>
-                                    <input name="wPhone" type="number"
+                                    <input name="wPhone" type="number" placeholder="Work Phone"
                                         class="p-3 @error('wPhone') is-invalid @enderror">
                                     @error('wPhone')
                                         <span class="invalid-feedback" role="alert">
@@ -370,8 +371,6 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-                            <div class="line d-flex justify-content-between gap-3 mb-4">
                                 <div class="input d-flex flex-column gap-2">
                                     <label>Email</label>
                                     <input name="email" type="text"
@@ -384,6 +383,7 @@
                                     @enderror
                                 </div>
                             </div>
+                            
                         </div>
 
                     </div>
@@ -410,8 +410,8 @@
             </div>
 
             <div class="rights mb-4">
-                © 2023 <span>Gleem</span> All rights reserved.
-            </div>
+                made with <span class="heart" style="color: red;">&#10084;</span> by <span>BetterWP</span>.
+          </div>
 
         </div>
 

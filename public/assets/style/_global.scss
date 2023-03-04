@@ -10,12 +10,19 @@
 
 body {
   font-family: 'Tajawal', sans-serif;
+  text-transform: capitalize;
 }
 
 // Global styles 
 
+button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+
 i , svg {
-  transition: .2s !important;
+  transition: inherit !important;
 }
 
 a {

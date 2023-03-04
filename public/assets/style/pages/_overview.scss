@@ -65,7 +65,7 @@
       color: #FFFFFF;
       background-color: $primary;
       font-weight: 500;
-      margin-bottom: 400px;
+      @include tra(.5s);
 
       i {
         font-size: 20px;
@@ -74,14 +74,7 @@
       border: none;
       
       &:hover {
-        
-        letter-spacing: 0.5px;
-        
-        transform: scale(1.02) translateY(-2px);
-        -webkit-transform: scale(1.02) translateY(-2px);
-        -moz-transform: scale(1.02) translateY(-2px);
-        -ms-transform: scale(1.02) translateY(-2px);
-        -o-transform: scale(1.02) translateY(-2px);
+        background-color: #b06b17;
       }
     }
 
@@ -90,7 +83,9 @@
       letter-spacing: -0.408px;
       text-transform: capitalize;
       color: $icons;
-      padding-left: 40px;
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
 
       &:hover {
         color: $primary;
@@ -258,7 +253,12 @@
           }
 
           tbody {
-            td {padding: 20px 0;}
+            td {
+              padding: 20px 0;
+              &:hover {
+                color: $primary;
+              }
+            }
             &:not(:last-of-type) {
               border-bottom: 1px solid #F4F4F4;
             }
@@ -284,7 +284,21 @@
           }
 
           tbody {
-            td {padding: 20px 0;}
+            td {
+              padding: 20px 0;
+              &:hover {
+                color: $primary;
+              }
+              span {
+                color: white;
+                display: block;
+                max-width: 80px;
+                margin: auto;
+                &.pending {background-color: #F2921F;}
+                &.rejected {background-color: #FE4C13;}
+                &.complete {background-color: #58E0AB;}
+              }
+            }
             &:not(:last-of-type) {
               border-bottom: 1px solid #F4F4F4;
             }

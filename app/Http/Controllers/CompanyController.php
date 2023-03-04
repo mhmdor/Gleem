@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\City;
+use App\Models\Country;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -14,79 +16,72 @@ class CompanyController extends Controller
     }
 
     
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function getCompanies()
     {
-        //
+       $Companies = Company::get();
+       return view('pages.companies',compact('Companies'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function getSingleCompany($id)
+    { 
+       $Company = Company::where('id', $id)->first();
+      $Country = Country::where('id', $Company->country_id)->first()->name;
+       $City = City::where('id', $Company->city_id)->first()->name;
+        
+       return view('pages.companyDetails',compact('Company','City','Country'));
     }
+    
+    public function createCompany(Request $request)
+    {
+        
+        if($request->method()=='GET')
+        {
+        $Countries = Country::get();
+        $Citiez = City::get();
+            return view('pages.addCompany',compact('Countries','Citiez'));
+        }
+        if($request->method()=='POST')
+        {
+            
+            $validator = $request->validate([
+                'companyName' => ['required', 'string', 'max:255'],
+                'PersonName' => ['required', 'string', 'max:255'],
+                'address' => ['required'],
+                'companyEmail' => ['required', 'email', 'string', 'max:255'],
+                'personEmail' => ['required', 'email', 'string', 'max:255'],
+                'mobPhone' => ['required', 'numeric'],
+                'companyPhone' => ['required', 'numeric'],
+                'workPhone' => ['required', 'numeric'],
+                'city_id' => ['required', 'numeric'],
+                'country_id' => ['required', 'numeric'],
+            ]);
+            if($request->photo == null){
+                $image=Null;
+            }else{
+                $image = $request->photo;
+                $destinationPathImg = public_path('assets/uploads/logos/');
+                if (!$image->move($destinationPathImg, $image->getClientOriginalName())) {
+                    return 'Error saving the file.';
+                }
+        
+                $image = $image->getClientOriginalName();
+            }
+            
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+            Company::create([
+                'companyName' => $request->companyName,
+                'PersonName' => $request->PersonName,
+                'personEmail' => $request->personEmail,
+                'companyEmail' => $request->companyEmail,
+                'mobPhone' => $request->mobPhone,
+                'address' => $request->address,
+                'companyPhone' => $request->companyPhone,
+                'workPhone' => $request->workPhone,
+                'country_id' => $request->country_id,
+                'city_id' => $request->city_id,
+                'photo'=> $image,
+            ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Company $company)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Company $company)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Company $company)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Company $company)
-    {
-        //
-    }
+            return redirect()->route('home')->with('success', 'Companies Create Successfuly');
+        }}
 }
